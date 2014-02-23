@@ -9,8 +9,8 @@ class MainPage(webapp.RequestHandler):
     
         time  = datetime.datetime.now()
         
-        self.response.headers['Content-Type'] = 'text/html'
-        self.response.out.write('<p>The time is: %s</p>' % str(time)')
+        self.response.headers['Content-Type'] = 'text/html; charset=UTF-8'
+        self.response.out.write('<p>The time is: %s</p>' % str(time))
 
 application = webapp.WSGIApplication([('/', MainPage)],
                                      debug=True)
