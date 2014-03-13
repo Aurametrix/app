@@ -4,16 +4,16 @@ import models
 
 class PrefsPage(webapp.RequestHandler):
     def post(self):
-    userprefs = models.get_userprefs()
-    try:
-        tz_offset = int(self.request.get('tz_offset'))
-        userprefs.tz_offset = tz_offset
-        userprefs.put()
-    except ValueError:
-        # User entered a value that wasn't an integer. Ignore for now.
-        pass
+        userprefs = models.get_userprefs()
+        try:
+            tz_offset = int(self.request.get('tz_offset'))
+            userprefs.tz_offset = tz_offset
+            userprefs.put()
+        except ValueError:
+            # User entered a value that wasn't an integer. Ignore for now.
+            pass
         
-    self.redirect('/')
+        self.redirect('/')
 
 application = webapp.WSGIApplication([('/prefs', PrefsPage)],
  debug=True)
