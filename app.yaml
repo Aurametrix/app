@@ -4,6 +4,8 @@ runtime: python27
 api_version: 1
 threadsafe: false
 
+default_expiration: "5d 12h"
+
 handlers:
 - url: /prefs
   script: prefs.py
