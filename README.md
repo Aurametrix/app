@@ -11,4 +11,6 @@ CGI protocol can be implemented directly, but in real applications web framework
 Django, web2py and Pylons are used
 
 App engine includes simplest framework "webapp" 
-
+Memcache service can be used as secondary storage for user preferences data. 
+The memcache stores key-value pairs, with an op- tional namespace for the key.
+To make the caching behavior more visible, add logging statements 

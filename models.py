@@ -2,11 +2,14 @@ from google.appengine.api import memcache
 from google.appengine.api import users
 from google.appengine.ext import db
 
+import logging
+
 class UserPrefs(db.Model):
     tz_offset = db.IntegerProperty(default=0)
     user = db.UserProperty(auto_current_user_add=True)
 
 def cache_set(self): 
+    logging.info('cache set')
     memcache.set(self.key().name(), self, namespace=self.key().kind())
 
 def put(self): 
