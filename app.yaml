@@ -12,5 +12,8 @@ handlers:
   login: required
 - url: /docs/latest  static_dir: /docs 
   expiration: "12h"
+- url: /js/(.*)/code.js 
+  static_files: js/code.js 
+  expiration: "90d"
 - url: /.*
   script: main.py
