@@ -10,5 +10,7 @@ handlers:
 - url: /prefs
   script: prefs.py
   login: required
+- url: /docs/latest  static_dir: /docs 
+  expiration: "12h"
 - url: /.*
   script: main.py
